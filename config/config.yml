@@ -1,0 +1,3 @@
+log_format: "%(asctime)s %(levelname)s %(message)s"
+log_level: "INFO"
+
