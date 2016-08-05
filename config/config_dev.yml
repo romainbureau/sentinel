@@ -1,0 +1,33 @@
+log_format: "%(asctime)s %(levelname)s %(message)s"
+log_level: "DEBUG"
+video_resource: "rtsp://127.0.0.1:8554/unicast"
+events_queue_size: 1024
+mute_seconds: 15 # seconds
+email: 'my@email.com'
+
+http_host: "0.0.0.0"
+http_port: 8080
+http_debug: True
+
+rtsp_server:
+    bin: "/usr/bin/h264_v4l2_rtspserver"
+    framerate: 8
+    width: 640
+    height: 480
+    port: 8554
+    dev: "/dev/video0"
+
+motion_detection:
+    status_file: "/tmp/motion_detection_%s"
+    save_dir: '/home/pi/Pictures/motion_detection'
+    show_video: True
+    min_area: 3000
+    delta_thresh: 3
+    min_motion_frames: 4
+
+smtp:
+    host: smtp.gmail.com
+    port: 587
+    username: username
+    password: password
+    mute_email: True
